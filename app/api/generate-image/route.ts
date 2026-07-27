@@ -36,11 +36,12 @@ export async function POST(req: NextRequest) {
 
   const prompt = buildPrompt(body);
 
-  // Pull a few reference images matching the selected property (e.g. "Academics",
-  // "K-12"), if any exist under public/reference-images/. Falls back to an empty
-  // array (text-only prompting) if that folder doesn't exist yet or is empty.
+  // Pull reference images matching the selected property + category (e.g.
+  // "K-12" + "Faith"), preferring a category-specific subfolder if one exists
+  // and filling the rest from the property's general pool. Falls back to an
+  // empty array (text-only prompting) if no matching images exist at all.
   // Read once and reused across all N parallel requests below.
-  const referenceImages = getReferenceImages(body.property, 3);
+  const referenceImages = getReferenceImages(body.property, body.category, 6);
 
   const parts: Record<string, unknown>[] = [];
 
@@ -51,8 +52,12 @@ export async function POST(req: NextRequest) {
     parts.push({
       text:
         `The images above are official brand reference photos for ${body.property}. ` +
-        `Match their architecture, lighting, color grading, and overall visual style as closely ` +
-        `as possible in the new image you generate below.`,
+        `Treat them as required visual ground truth, not loose inspiration: match their exact ` +
+        `architecture, building materials, and structural details (not just general style), along ` +
+        `with their lighting, color grading, and overall photographic feel, as closely as possible ` +
+        `in the new image you generate below. If none of the reference images show the specific ` +
+        `subject or location described below, still strictly follow their architectural material, ` +
+        `color palette, and lighting style rather than inventing a generic or different building.`,
     });
   }
 
