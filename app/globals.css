@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Using system font stacks by default so the build never depends on
+  fetching Google Fonts over the network. If you want the exact
+  Playfair Display / Inter look from the Figma file, add:
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  to app/layout.tsx's <head>, or switch back to next/font/google.
+*/
+:root {
+  --font-serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* Design tokens pasted from Figma Dev Mode — add more here as you send them */
+  --color-primary-10: #002755; /* confirmed: Step 1 container background */
+}
+
+html,
+body {
+  background-color: var(--color-primary-10);
+  color: #f4f6f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #6d8cff;
+  color: #fff;
+}
