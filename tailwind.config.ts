@@ -9,7 +9,7 @@ const config: Config = {
     extend: {
       colors: {
         sidebar: "#080f18",
-        main: "#002755", // --color-primary-10 from Figma
+        main: "#000D1C", // --color-primary-10 from Figma
         footer: "#0d2a52",
         borderSubtle: "rgba(255,255,255,0.14)",
         borderFaint: "rgba(255,255,255,0.08)",

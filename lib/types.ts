@@ -18,7 +18,12 @@ export type Tone =
   | "Academic"
   | "Disciplined"
   | "Playful"
-  | "Competitive";
+  | "Competitive"
+  | "Intellectual"
+  | "Driven"
+  | "Connected"
+  | "Composed"
+  | "Reverent";
 
 export interface GeneratorState {
   property: Property;

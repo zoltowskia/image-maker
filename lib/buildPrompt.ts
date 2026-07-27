@@ -29,6 +29,54 @@ Brand visual identity guidelines (apply to every image, always):
  * properties without an entry here just get the general brand guide.
  */
 const PROPERTY_STYLE_NOTES: Partial<Record<string, string>> = {
+  "Academics": `
+Academics official style guide -- this section is authoritative for Academics images and
+OVERRIDES the general brand guidance above wherever the two conflict, especially on lighting:
+for Academics, do NOT use flat, evenly-lit, "bright exposure" lighting or golden-hour softness.
+Use the directional, high-contrast lighting rules below instead.
+
+Master tone: Serious. Intellectual. Human. Subjects carry intellect, conviction, and quiet
+self-possession. Grounded and emotionally weighted -- people caught in genuine thought and
+engagement, never performing for the camera. Warmth and connection belong here too, but they
+read as earned and real rather than bright or staged.
+
+Lighting (required): directional, dimensional, intentional -- cinematic, grounded, intellectually
+serious. A single dominant light source with hard-to-soft falloff that models form and texture.
+High contrast with intentional, controlled shadow. Window and natural light shaped by the
+architecture. Use negative space and darkness as compositional tools; preserve detail in shadow
+without crushed blacks. Keep lighting consistent across a sequence, whether the shot is composed
+(portraits, architecture, historical figures -- deliberately lit and framed) or observed (student
+life, hands at work, gesture in motion -- caught real). This documentary style stays cinematic:
+dark, directional, editorial -- never the bright candid register used for K-12 imagery. Avoid:
+flat/evenly-lit "bright exposure" lighting, harsh on-camera flash, cool/clinical/corporate white
+balance, blown-out highlights, artificial HDR or trendy filters, and mixing warm and cool grading
+within a single image.
+
+Casting and age: college-age (18-22) and adult subjects only, alongside faculty and mentors.
+Natural diversity and balanced gender representation. Real intergenerational moments (student
+with professor, mentor with scholar). Never depict K-12-age children as Academics subjects.
+
+Appearance: students should look age-appropriate (college-age, adult), healthy and natural,
+intellectually present, naturally styled -- collegiate, not costumed. Faculty should look
+authoritative and credible, approachable rather than aloof, distinguished without being stiff.
+Avoid fashion-photography styling or heavy makeup, trend-driven or influencer aesthetics,
+corporate-headshot polish, and anything that reads as staged or stock.
+
+Subjects and action, by category -- Classroom: reading, writing, annotating, lecturing,
+presenting, debating, Socratic discussion, listening intently, research, deep focus, problem
+solving. Mentorship/Teacher: one-on-one mentorship, wrestling with a text or argument. Faith:
+prayer and quiet reflection, chapel/worship/ceremony, reverent contemplative moments. Athletics:
+competition and effort, training, practicing, conditioning, teamwork and resolve, the discipline
+behind the performance. Arts & Culture: performing (music, theater, recital), creating (drawing,
+instrument, craft), rehearsal and mastery. Campus & Community: crossing the grounds, gathering,
+conversation, tradition and ritual moments, human presence within architectural scale.
+
+Tone attributes (in priority order): intellectual, thoughtful, driven, connected, and composed
+(high priority); curious, joyful, and reverent (medium priority); playful (lower priority). Avoid
+performative or posed-for-camera moods, corporate or stock-like feel, sentimental or saccharine
+tone, detached or vacant expressions, and hyper/frantic/overhyped energy.
+`.trim(),
+
   "K-12": `
 K-12 official style guide -- this section is authoritative for K-12 images and OVERRIDES the
 general brand guidance above wherever the two conflict, especially on lighting and color: for
