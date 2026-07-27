@@ -66,3 +66,4 @@ lib/
   change to support multiple variations per generation if needed.
 - Swap `GEMINI_IMAGE_MODEL` in `.env.local` to `gemini-3-pro-image-preview`
   for higher-quality (slower, pricier) output.
+# Deployment trigger 2026-07-27T18:43:00Z
