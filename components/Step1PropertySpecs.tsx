@@ -3,7 +3,7 @@
 import { Chip } from "./Chip";
 import { AspectRatio, GeneratorState, Property } from "@/lib/types";
 
-const PROPERTIES: Property[] = ["Hillsdale College", "Academics", "K-12", "Media", "Studios"];
+const PROPERTIES: Property[] = ["Hillsdale College", "Academics", "K-12"];
 const ASPECT_RATIOS: AspectRatio[] = ["16:9", "1:1", "9:16", "4:3", "3:2"];
 
 interface Step1Props {

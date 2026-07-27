@@ -1,4 +1,4 @@
-export type Property = "Hillsdale College" | "Academics" | "K-12" | "Media" | "Studios";
+export type Property = "Hillsdale College" | "Academics" | "K-12";
 export type AspectRatio = "16:9" | "1:1" | "9:16" | "4:3" | "3:2";
 export type Category =
   | "Classroom"
