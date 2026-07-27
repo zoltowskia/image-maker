@@ -5,26 +5,20 @@ export const publicoHeadline = localFont({
   src: [
     { path: "./fonts/PublicoHeadline-Light.otf", weight: "300", style: "normal" },
     { path: "./fonts/PublicoHeadline-LightItalic.otf", weight: "300", style: "italic" },
+    { path: "./fonts/PublicoHeadline-Roman.otf", weight: "400", style: "normal" },
   ],
   variable: "--font-publico",
   display: "swap",
 });
 
-// Termina — the sans-serif used for body/UI text.
-// Note: these are "*Test" files from the foundry, typically a trial/demo cut —
-// confirm a properly licensed version is in place before shipping publicly.
-export const termina = localFont({
+// Neue Haas Grotesk Text — the sans-serif used for body/UI text.
+export const neueHaas = localFont({
   src: [
-    { path: "./fonts/TerminaTest-Thin.otf", weight: "100", style: "normal" },
-    { path: "./fonts/TerminaTest-ExtraLight.otf", weight: "200", style: "normal" },
-    { path: "./fonts/TerminaTest-Light.otf", weight: "300", style: "normal" },
-    { path: "./fonts/TerminaTest-Regular.otf", weight: "400", style: "normal" },
-    { path: "./fonts/TerminaTest-Medium.otf", weight: "500", style: "normal" },
-    { path: "./fonts/TerminaTest-Demi.otf", weight: "600", style: "normal" },
-    { path: "./fonts/TerminaTest-Bold.otf", weight: "700", style: "normal" },
-    { path: "./fonts/TerminaTest-Heavy.otf", weight: "800", style: "normal" },
-    { path: "./fonts/TerminaTest-Black.otf", weight: "900", style: "normal" },
+    { path: "./fonts/NeueHaasGroteskText-55Roman-App.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/NeueHaasGroteskText-56Italic-App.ttf", weight: "400", style: "italic" },
+    { path: "./fonts/NeueHaasGroteskText-75Bold-App.ttf", weight: "700", style: "normal" },
+    { path: "./fonts/NeueHaasGroteskText-76BoldItalic-App.ttf", weight: "700", style: "italic" },
   ],
-  variable: "--font-termina",
+  variable: "--font-neue-haas",
   display: "swap",
 });

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { publicoHeadline, termina } from "./fonts";
+import { publicoHeadline, neueHaas } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${publicoHeadline.variable} ${termina.variable}`}>
+    <html lang="en" className={`${publicoHeadline.variable} ${neueHaas.variable}`}>
       <body className="font-sans bg-main text-textPrimary min-h-screen">
         {children}
       </body>
