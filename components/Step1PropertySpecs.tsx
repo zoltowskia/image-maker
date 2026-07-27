@@ -41,7 +41,7 @@ export function Step1PropertySpecs({ state, onChange, onNext }: Step1Props) {
           <select
             value={state.aspectRatio}
             onChange={(e) => onChange({ aspectRatio: e.target.value as AspectRatio })}
-            className="w-full appearance-none bg-transparent border border-borderSubtle rounded-chip px-[14px] py-[14px] pr-10 text-[14.5px] cursor-pointer focus:outline-none focus:border-[#6d8cff]"
+            className="w-full appearance-none bg-transparent border border-borderSubtle rounded-chip px-[14px] py-[14px] pr-10 text-[14.5px] font-interactive font-medium cursor-pointer focus:outline-none focus:border-[#6d8cff]"
           >
             {ASPECT_RATIOS.map((ar) => (
               <option key={ar} value={ar} className="bg-[#0e1926] text-textPrimary">
@@ -58,7 +58,7 @@ export function Step1PropertySpecs({ state, onChange, onNext }: Step1Props) {
       <div className="flex justify-center mt-2">
         <button
           onClick={onNext}
-          className="bg-white text-main rounded-full px-[30px] py-[13px] text-[14.5px] font-bold hover:bg-[#e9edf2]"
+          className="bg-white text-main rounded-full px-[30px] py-[13px] text-[14.5px] font-interactive font-medium hover:bg-[#e9edf2]"
         >
           Next
         </button>

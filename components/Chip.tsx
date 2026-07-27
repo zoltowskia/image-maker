@@ -12,9 +12,9 @@ export function Chip({ label, selected, onClick }: ChipProps) {
       type="button"
       onClick={onClick}
       className={
-        "rounded-chip border px-[18px] py-[11px] text-sm font-medium transition-colors " +
+        "font-interactive font-medium rounded-chip border px-[18px] py-[11px] text-sm transition-colors " +
         (selected
-          ? "bg-white text-main border-white font-semibold"
+          ? "bg-white text-main border-white"
           : "bg-transparent text-textPrimary border-borderSubtle hover:border-white/40")
       }
     >

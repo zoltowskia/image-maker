@@ -25,7 +25,7 @@ export function SelectionView({ images, onSelect, onBack }: SelectionViewProps) 
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={img} alt={`Option ${i + 1}`} className="block w-full h-auto" />
             <div className="absolute inset-0 flex items-end justify-center pb-3 bg-black/0 group-hover:bg-black/25 transition-colors">
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white text-main text-[13px] font-semibold rounded-full px-4 py-1.5">
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white text-main text-[13px] font-interactive font-medium rounded-full px-4 py-1.5">
                 Choose this one
               </span>
             </div>
@@ -36,7 +36,7 @@ export function SelectionView({ images, onSelect, onBack }: SelectionViewProps) 
       <div className="flex justify-center">
         <button
           onClick={onBack}
-          className="bg-transparent border border-borderSubtle text-textPrimary rounded-full px-[26px] py-[13px] text-[14.5px] font-semibold hover:border-white/40"
+          className="bg-transparent border border-borderSubtle text-textPrimary rounded-full px-[26px] py-[13px] text-[14.5px] font-interactive font-medium hover:border-white/40"
         >
           Back to edit
         </button>

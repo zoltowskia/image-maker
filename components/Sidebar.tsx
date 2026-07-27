@@ -28,7 +28,7 @@ export function Sidebar({ active, onNavigate }: SidebarProps) {
               key={item.key}
               onClick={() => onNavigate(item.key)}
               className={
-                "text-left text-[14.5px] font-semibold px-3 py-2.5 rounded-lg transition-colors " +
+                "text-left text-[14.5px] font-interactive font-medium px-3 py-2.5 rounded-lg transition-colors " +
                 (active === item.key
                   ? "bg-[#1c2634] text-textPrimary"
                   : "text-textMuted hover:text-textPrimary")

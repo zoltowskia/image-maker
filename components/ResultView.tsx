@@ -34,19 +34,19 @@ export function ResultView({ asset, onEdit, onStartOver }: ResultViewProps) {
       <div className="flex gap-3 justify-center">
         <button
           onClick={onEdit}
-          className="bg-transparent border border-borderSubtle text-textPrimary rounded-full px-[26px] py-[13px] text-[14.5px] font-semibold hover:border-white/40"
+          className="bg-transparent border border-borderSubtle text-textPrimary rounded-full px-[26px] py-[13px] text-[14.5px] font-interactive font-medium hover:border-white/40"
         >
           Edit &amp; regenerate
         </button>
         <button
           onClick={onStartOver}
-          className="bg-transparent border border-borderSubtle text-textPrimary rounded-full px-[26px] py-[13px] text-[14.5px] font-semibold hover:border-white/40"
+          className="bg-transparent border border-borderSubtle text-textPrimary rounded-full px-[26px] py-[13px] text-[14.5px] font-interactive font-medium hover:border-white/40"
         >
           Start over
         </button>
         <button
           onClick={handleDownload}
-          className="bg-white text-main rounded-full px-[30px] py-[13px] text-[14.5px] font-bold hover:bg-[#e9edf2]"
+          className="bg-white text-main rounded-full px-[30px] py-[13px] text-[14.5px] font-interactive font-medium hover:bg-[#e9edf2]"
         >
           Download
         </button>

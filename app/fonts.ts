@@ -22,3 +22,15 @@ export const neueHaas = localFont({
   variable: "--font-neue-haas",
   display: "swap",
 });
+
+// Termina — used specifically for interactive elements: chips, inputs, and
+// buttons (per brand direction), not for general body copy.
+export const termina = localFont({
+  src: [
+    { path: "./fonts/TerminaTest-Regular.otf", weight: "400", style: "normal" },
+    { path: "./fonts/TerminaTest-Medium.otf", weight: "500", style: "normal" },
+    { path: "./fonts/TerminaTest-Bold.otf", weight: "700", style: "normal" },
+  ],
+  variable: "--font-termina",
+  display: "swap",
+});

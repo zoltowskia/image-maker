@@ -87,21 +87,21 @@ export function Step2Describe({
           value={state.description}
           onChange={(e) => onChange({ description: e.target.value })}
           placeholder="Describe your image *"
-          className="w-full min-h-[120px] bg-transparent border border-borderSubtle rounded-chip p-[14px] text-[14.5px] leading-relaxed placeholder:text-textDim focus:outline-none focus:border-[#6d8cff] resize-y"
+          className="w-full min-h-[120px] bg-transparent border border-borderSubtle rounded-chip p-[14px] text-[14.5px] font-interactive font-medium leading-relaxed placeholder:text-textDim focus:outline-none focus:border-[#6d8cff] resize-y"
         />
       </div>
 
       <div className="flex gap-3 justify-center mt-2">
         <button
           onClick={onBack}
-          className="bg-transparent border border-borderSubtle text-textPrimary rounded-full px-[26px] py-[13px] text-[14.5px] font-semibold hover:border-white/40"
+          className="bg-transparent border border-borderSubtle text-textPrimary rounded-full px-[26px] py-[13px] text-[14.5px] font-interactive font-medium hover:border-white/40"
         >
           Back
         </button>
         <button
           onClick={onGenerate}
           disabled={generating}
-          className="bg-white text-main rounded-full px-[30px] py-[13px] text-[14.5px] font-bold disabled:opacity-45 disabled:cursor-not-allowed hover:enabled:bg-[#e9edf2]"
+          className="bg-white text-main rounded-full px-[30px] py-[13px] text-[14.5px] font-interactive font-medium disabled:opacity-45 disabled:cursor-not-allowed hover:enabled:bg-[#e9edf2]"
         >
           {generating ? "Generating…" : "Generate"}
         </button>

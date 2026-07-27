@@ -20,6 +20,7 @@ const config: Config = {
       fontFamily: {
         serif: ["var(--font-serif)", "Georgia", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        interactive: ["var(--font-interactive)", "system-ui", "sans-serif"],
       },
       borderRadius: {
         chip: "9px",
