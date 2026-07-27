@@ -1,16 +1,10 @@
-import { ShieldLogo } from "./ShieldLogo";
+import { HillsdaleLogo } from "./HillsdaleLogo";
 
 export function SiteFooter() {
   return (
     <footer className="bg-footer px-14 pt-10 pb-6">
-      <div className="flex items-center gap-2.5 mb-[26px]">
-        <ShieldLogo size={30} />
-        <div>
-          <div className="font-bold text-[15px] tracking-wide">HILLSDALE COLLEGE</div>
-          <div className="text-[9.5px] tracking-[0.12em] text-[#a9bcd6] mt-0.5">
-            ACADEMICS&nbsp;&nbsp;|&nbsp;&nbsp;K-12&nbsp;&nbsp;|&nbsp;&nbsp;MEDIA
-          </div>
-        </div>
+      <div className="mb-[26px]">
+        <HillsdaleLogo width={200} />
       </div>
 
       <div className="flex gap-20 mb-[22px] flex-wrap">

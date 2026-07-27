@@ -1,6 +1,6 @@
 "use client";
 
-import { ShieldLogo } from "./ShieldLogo";
+import { HillsdaleLogo } from "./HillsdaleLogo";
 
 export type NavKey = "generator" | "assets" | "favorites";
 
@@ -18,15 +18,7 @@ const NAV_ITEMS: { key: NavKey; label: string }[] = [
 export function Sidebar({ active, onNavigate }: SidebarProps) {
   return (
     <aside className="w-[270px] shrink-0 bg-sidebar border-r border-borderFaint px-6 py-7 flex flex-col gap-7">
-      <div className="flex items-center gap-2.5">
-        <ShieldLogo />
-        <div className="leading-tight">
-          <div className="font-bold text-[13px] tracking-wide">HILLSDALE COLLEGE</div>
-          <div className="text-[9.5px] tracking-[0.12em] text-textMuted mt-0.5">
-            ACADEMICS&nbsp;&nbsp;|&nbsp;&nbsp;K-12&nbsp;&nbsp;|&nbsp;&nbsp;MEDIA
-          </div>
-        </div>
-      </div>
+      <HillsdaleLogo width={170} />
 
       <div>
         <div className="font-serif text-[19px] mb-1">My Assets</div>
