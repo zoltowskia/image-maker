@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
   // and filling the rest from the property's general pool. Falls back to an
   // empty array (text-only prompting) if no matching images exist at all.
   // Read once and reused across all N parallel requests below.
-  const referenceImages = getReferenceImages(body.property, body.category, 6);
+  const referenceImages = getReferenceImages(body.property, body.category, body.style, 6);
 
   const parts: Record<string, unknown>[] = [];
 

@@ -26,6 +26,22 @@ function slugify(value: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
+/**
+ * A couple of category folder names are shorter than the app's actual
+ * category label, by request (e.g. the app category is "Mentorship/Teacher"
+ * but the folder is just "mentorship"). Anything not listed here just uses
+ * the plain slugified category name.
+ */
+const CATEGORY_FOLDER_ALIASES: Record<string, string> = {
+  "mentorship-teacher": "mentorship",
+  "campus-community": "campus-life",
+};
+
+function categoryFolderName(category: string): string {
+  const slug = slugify(category);
+  return CATEGORY_FOLDER_ALIASES[slug] || slug;
+}
+
 function listImageFiles(dir: string): string[] {
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir).filter((file) => MIME_TYPES[path.extname(file).toLowerCase()]);
@@ -42,34 +58,44 @@ function readImage(dir: string, file: string): ReferenceImage {
 }
 
 /**
- * Picks up to `count` reference images for the given property + category.
+ * Picks up to `count` reference images for the given property + category + style.
  *
- * Prefers images from a category-specific subfolder
- * (public/reference-images/<property>/<category>/) if one exists, filling
- * any remaining slots from the property's general pool
- * (public/reference-images/<property>/). Falls back entirely to the general
- * pool if no category subfolder exists yet -- so this works immediately with
- * a flat, non-categorized image set, and automatically gets more precise as
- * category subfolders are added over time (e.g. .../k-12/faith/ for chapel
- * photos specifically, so "Faith" category generations reliably see the
- * actual chapel rather than a random unrelated K-12 photo).
+ * Folder layout: public/reference-images/<property>/<category>/<style>/
+ * e.g. public/reference-images/k-12/faith/candid/
+ *
+ * Matching cascades from most to least specific, filling any remaining slots
+ * from the next broader level, so it always works even if some folders are
+ * thin or don't exist yet:
+ *   1. property/category/style   (most specific)
+ *   2. property/category         (same category, any style)
+ *   3. property                  (general pool, any category/style)
  */
-export function getReferenceImages(property: string, category: string, count = 6): ReferenceImage[] {
+export function getReferenceImages(
+  property: string,
+  category: string,
+  style: string,
+  count = 6
+): ReferenceImage[] {
   const propertyDir = path.join(REFERENCE_ROOT, slugify(property));
-  const categoryDir = path.join(propertyDir, slugify(category));
+  const categoryDir = path.join(propertyDir, categoryFolderName(category));
+  const styleDir = path.join(categoryDir, slugify(style));
 
-  const categoryFiles = shuffle(listImageFiles(categoryDir));
-  const picked: { dir: string; file: string }[] = categoryFiles
-    .slice(0, count)
-    .map((file) => ({ dir: categoryDir, file }));
+  const picked: { dir: string; file: string }[] = [];
+  const usedFiles = new Set<string>();
 
-  if (picked.length < count) {
-    const generalFiles = shuffle(listImageFiles(propertyDir));
-    for (const file of generalFiles) {
+  function addFrom(dir: string) {
+    if (picked.length >= count) return;
+    const files = shuffle(listImageFiles(dir)).filter((f) => !usedFiles.has(`${dir}/${f}`));
+    for (const file of files) {
       if (picked.length >= count) break;
-      picked.push({ dir: propertyDir, file });
+      picked.push({ dir, file });
+      usedFiles.add(`${dir}/${file}`);
     }
   }
+
+  addFrom(styleDir);
+  addFrom(categoryDir);
+  addFrom(propertyDir);
 
   return picked.map(({ dir, file }) => readImage(dir, file));
 }
